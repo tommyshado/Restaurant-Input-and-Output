@@ -1,0 +1,24 @@
+---
+restaurants_items:
+- name: kfc
+  Site: https://order.kfc.co.za/
+  email: kfc@gmail.com
+  phone_number: '0210024438'
+  menu_items:
+  - name: wings
+    price: 39
+    description: original wings
+  - name: wrapstar
+    price: 75
+    description: all star wrapstar
+- name: burgerking
+  Site: https://burgerking.co.za/
+  email: king@gmail.com
+  phone_number: '0352256674'
+  menu_items:
+  - name: whopper
+    price: 100
+    description: whoppstar meal
+  - name: vegan royal
+    price: 85
+    description: all about vegan
