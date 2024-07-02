@@ -1,6 +1,16 @@
-# Restaurant Menu
+# Restaurant Inputs and Outputs
 
-This project involves exploring various inputs and outputs using different restaurant menus stored in a YAML file. It demonstrates how to read data from a YAML file and convert it into a computer-readable format.
+## Overview
+
+This project involves exploring various inputs and outputs using different restaurant menus stored in a YAML file. It demonstrates reading data from a YAML file and converting it into a computer-readable format.
+
+## Getting Started
+
+1. Clone the repository using `git clone <project_URL>`.
+2. Navigate into the repository using `cd Restaurant-Inputs-and-Outputs`.
+3. Inside the directory install all the necessary dependencies using `npm install`.
+
+## Restaurant Menu Markdown Version
 
 ## 1. KFC
 
