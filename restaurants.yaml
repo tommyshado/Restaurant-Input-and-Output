@@ -1,24 +1,72 @@
 ---
 restaurants_items:
 - name: kfc
-  Site: https://order.kfc.co.za/
+  site: https://order.kfc.co.za/
   email: kfc@gmail.com
   phone_number: '0210024438'
   menu_items:
-  - name: wings
-    price: 39
-    description: original wings
-  - name: wrapstar
-    price: 75
-    description: all star wrapstar
+    starters:
+    - name: Oreo crasher
+      price: 36
+      description: Dark Chocolate Crasher
+    - name: wings
+      price: 75
+      description: 10 Dunked Wings
+    - name: Oreo Crasher
+      price: 19.9
+      description: Oreo Sundea
+    mains:
+    - name: Chicken Wrap
+      price: 85
+      description: Classic Wrappstar
+    - name: Burger
+      price: 125
+      description: Wicked Zinger Box
+    - name: Chicken
+      price: 250
+      description: 21 Piece Bucket
+    drinks:
+    - name: Coca Cola
+      price: 21
+      description: 1.5 litre Coke Sugar
+    - name: Fanta
+      price: 15
+      description: 500ml Fanta Less Sugar
+    - name: Sparkling Crasher
+      price: 31
+      description: Mojito Sparkling Crasher
 - name: burgerking
-  Site: https://burgerking.co.za/
+  site: https://burgerking.co.za/
   email: king@gmail.com
   phone_number: '0352256674'
   menu_items:
-  - name: whopper
-    price: 100
-    description: whoppstar meal
-  - name: vegan royal
-    price: 85
-    description: all about vegan
+    desserts:
+    - name: Ice Cream
+      price: 25
+      description: Chocolate CuppaCake
+    - name: Oreo Fusion
+      price: 35
+      description: Oreo bits Ice Cream
+    - name: Bar One Fusion
+      price: 45
+      description: Bar One Ice Cream
+    mains:
+    - name: Chicken Burger
+      price: 125
+      description: Yummy Chicken Burger
+    - name: Chicken Burger
+      price: 125
+      description: Big King Chicken Burger
+    - name: Whopper
+      price: 35
+      description: JR Whopper Meal
+    starters:
+    - name: Cappuccino
+      price: 15
+      description: Iced Cappuccino
+    - name: Nuggets
+      price: 35
+      description: Spicy Chicken Nuggets
+    - name: Chips
+      price: 25
+      description: Large Fries
