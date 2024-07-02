@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/marked": "^6.0.0",
+    "marked": "^13.0.1",
     "yaml": "^2.4.5"
   },
   "keywords": [],

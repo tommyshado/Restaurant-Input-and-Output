@@ -1,9 +1,12 @@
 ---
 restaurants_items:
+
+# KFC Restaurant
 - name: kfc
   site: https://order.kfc.co.za/
   email: kfc@gmail.com
   phone_number: '0210024438'
+
   menu_items:
     starters:
     - name: Oreo crasher
@@ -35,10 +38,13 @@ restaurants_items:
     - name: Sparkling Crasher
       price: 31
       description: Mojito Sparkling Crasher
+
+# Burger King Restaurant
 - name: burgerking
   site: https://burgerking.co.za/
   email: king@gmail.com
   phone_number: '0352256674'
+
   menu_items:
     desserts:
     - name: Ice Cream
