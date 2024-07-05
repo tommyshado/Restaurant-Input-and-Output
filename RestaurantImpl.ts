@@ -16,4 +16,7 @@ export default class RestaurantImpl {
             menu_items: [],
         }
     }
+    findRestaurants(restaurantsList: IRestaurant[]): IRestaurant[] {
+        return restaurantsList;
+    };
 }

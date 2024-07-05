@@ -18,5 +18,9 @@ class RestaurantImpl {
             menu_items: [],
         };
     }
+    findRestaurants(restaurantsList) {
+        return restaurantsList;
+    }
+    ;
 }
 exports.default = RestaurantImpl;

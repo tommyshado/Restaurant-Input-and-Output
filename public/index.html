@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurants</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="restaurants"></div>
+    <script type="text/x-template" class="restaurants-template">
+      {{#each this}}
+          <div class="card">
+              <div class="content">
+                  <a href="{{this.site}}">
+                      <span class="title">
+                      {{this.name}}
+                      </span>
+                  </a>
+
+                  <p class="email details">
+                      {{this.email}}
+                  </p>
+
+                  <p class="phone-number details">
+                      {{this.phone_number}}
+                  </p>
+
+                  <a class="action" href="menu.html?menu&restaurant={{this.name}}">
+                      Restaurant Menu
+                      <span aria-hidden="true"> → </span>
+                  </a>
+              </div>
+          </div>
+      {{/each}}
+    </script>
+  </body>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  <script src="./client.js"></script>
+</html>
