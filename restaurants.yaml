@@ -6,6 +6,7 @@ restaurants_items:
   site: https://order.kfc.co.za/
   email: kfc@gmail.com
   phone_number: '0210024438'
+  image: ./assets/kfc.jpg
 
   menu_items:
     starters:
@@ -44,6 +45,7 @@ restaurants_items:
   site: https://burgerking.co.za/
   email: king@gmail.com
   phone_number: '0352256674'
+  image: ./assets/burgerking.jpg
 
   menu_items:
     desserts:

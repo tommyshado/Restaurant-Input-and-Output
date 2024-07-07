@@ -13,18 +13,21 @@
       {{#each this}}
           <div class="card">
               <div class="content">
-                  <a href="{{this.site}}">
+                  <h3>
                       <span class="title">
-                      {{this.name}}
+                      {{name}}
                       </span>
+                  </h3>
+                  <a href="{{site}}">
+                    <img src="{{image}}" alt="restaurant-image.jpg" width="100%">
                   </a>
                   <p class="email details">
-                      {{this.email}}
+                      {{email}}
                   </p>
                   <p class="phone-number details">
-                      {{this.phone_number}}
+                      {{phone_number}}
                   </p>
-                  <a class="action" href="menu.html?menu&restaurant={{this.name}}">
+                  <a class="action" href="menu.html?menu&restaurant={{name}}">
                       Restaurant Menu
                       <span aria-hidden="true"> → </span>
                   </a>
