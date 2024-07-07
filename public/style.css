@@ -1,3 +1,13 @@
+
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+}
+
 .card {
   border: 2px solid #6B7280; 
   max-width: 300px; 
@@ -60,3 +70,6 @@
     transform: translateX(4px);
   }
   
+  .restaurants {
+    display: flex;
+  }

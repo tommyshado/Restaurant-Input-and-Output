@@ -40,7 +40,7 @@ restaurants_items:
       description: Mojito Sparkling Crasher
 
 # Burger King Restaurant
-- name: burgerking
+- name: burger king
   site: https://burgerking.co.za/
   email: king@gmail.com
   phone_number: '0352256674'
