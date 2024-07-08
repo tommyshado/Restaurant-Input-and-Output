@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Compile the Handlebars templates
     const restaurantsTemplate = Handlebars.compile(document.getElementById("restaurants-template").innerHTML);
     const restaurantMenuTemplate = Handlebars.compile(document.getElementById("restaurant-menu-template").innerHTML);
-
     // Function to load and display restaurants
     function findRestaurants() {
         const restaurantsReference = document.querySelector(".restaurants");
@@ -16,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
             restaurantsReference.innerHTML = `An error occurred while fetching restaurants.`;
         });
     }
-
     // Function to load and display the restaurant menu
     function findRestaurantMenu(restaurant) {
         const menuReference = document.querySelector(".restaurant-menu");
@@ -30,22 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
             menuReference.innerHTML = `An error occurred while fetching restaurant menu for ${restaurant}.`;
         });
     }
-
-    // Event listener for hash changes
-    window.addEventListener('hashchange', () => {
-        const hash = window.location.hash.substring(1);
-        const urlParams = new URLSearchParams(hash);
-        const restaurantName = urlParams.get("restaurant");
-        if (restaurantName) {
-            findRestaurantMenu(restaurantName);
-        }
-    });
-
-    // Load the initial data
-    findRestaurants();
-
-    // Load menu based on the initial hash
-    if (window.location.hash) {
+    function loadRestaurantMenu() {
         const hash = window.location.hash.substring(1);
         const urlParams = new URLSearchParams(hash);
         const restaurantName = urlParams.get("restaurant");
@@ -53,4 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
             findRestaurantMenu(restaurantName);
         }
     }
+    // Event listener for hash changes
+    window.addEventListener('hashchange', loadRestaurantMenu);
+    // Load the initial data
+    findRestaurants();
 });
