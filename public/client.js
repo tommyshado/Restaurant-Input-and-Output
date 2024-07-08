@@ -1,34 +1,56 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let restaurantsTemplate = document.querySelector(".restaurants-template");
-    let restaurantsInstance = Handlebars.compile(restaurantsTemplate.innerHTML);
+    // Compile the Handlebars templates
+    const restaurantsTemplate = Handlebars.compile(document.getElementById("restaurants-template").innerHTML);
+    const restaurantMenuTemplate = Handlebars.compile(document.getElementById("restaurant-menu-template").innerHTML);
 
+    // Function to load and display restaurants
     function findRestaurants() {
-        let restaurantsReference = document.querySelector(".restaurants");
+        const restaurantsReference = document.querySelector(".restaurants");
         axios.get("/api").then((results) => {
             const data = results.data;
             if (data) {
-                restaurantsReference.innerHTML = restaurantsInstance(data);
+                restaurantsReference.innerHTML = restaurantsTemplate(data);
             }
+        }).catch(error => {
+            console.error(error);
+            restaurantsReference.innerHTML = `An error occurred while fetching restaurants.`;
         });
     }
+
+    // Function to load and display the restaurant menu
+    function findRestaurantMenu(restaurant) {
+        const menuReference = document.querySelector(".restaurant-menu");
+        axios.get(`/api/menu?restaurant=${restaurant}`).then(results => {
+            const data = results.data;
+            if (data) {
+                menuReference.innerHTML = restaurantMenuTemplate(data);
+            }
+        }).catch(error => {
+            console.error(error);
+            menuReference.innerHTML = `An error occurred while fetching restaurant menu for ${restaurant}.`;
+        });
+    }
+
+    // Event listener for hash changes
+    window.addEventListener('hashchange', () => {
+        const hash = window.location.hash.substring(1);
+        const urlParams = new URLSearchParams(hash);
+        const restaurantName = urlParams.get("restaurant");
+        if (restaurantName) {
+            findRestaurantMenu(restaurantName);
+        }
+    });
+
+    // Load the initial data
     findRestaurants();
 
-    function findRestaurantMenu() {
-        let menuReference = document.querySelector(".restaurant-menu");
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const restaurantParamValue = urlParams.get("restaurant");
-
-        if (!restaurantParamValue) return "restaurant undefined";
-        else
-            axios
-                .get(`/api/menu?restaurant=${restaurantParamValue}`)
-                .then((results) => {
-                    const data = results.data;
-                    if (data) {
-                        menuReference.innerHTML = restaurantsInstance(data);
-                    }
-                });
+    // Load menu based on the initial hash
+    if (window.location.hash) {
+        const hash = window.location.hash.substring(1);
+        const urlParams = new URLSearchParams(hash);
+        const restaurantName = urlParams.get("restaurant");
+        if (restaurantName) {
+            findRestaurantMenu(restaurantName);
+        }
     }
-    findRestaurantMenu();
 });

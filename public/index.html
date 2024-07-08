@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restaurants</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
+</head>
+<body>
 
-  <body>
+    <!-- Restaurants -->
     <div class="restaurants"></div>
-    <script type="text/x-template" class="restaurants-template">
+    <script type="text/x-template" id="restaurants-template">
       {{#each this}}
           <div class="card">
               <div class="content">
@@ -27,7 +28,7 @@
                   <p class="phone-number details">
                       {{phone_number}}
                   </p>
-                  <a class="action" href="menu.html?menu&restaurant={{name}}">
+                  <a class="action" href="#restaurant={{name}}">
                       Restaurant Menu
                       <span aria-hidden="true"> → </span>
                   </a>
@@ -35,9 +36,30 @@
           </div>
       {{/each}}
     </script>
-  </body>
 
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-  <script src="./client.js"></script>
+    <!-- Restaurant Menu -->
+    <div class="restaurant-menu"></div>
+    <script type="text/x-template" id="restaurant-menu-template">
+      {{#each menu_items}}
+          <h3 class="title">{{@key}}</h3>
+          <div class="restaurants">
+              {{#each this}}
+                <div class="card">
+                    <div class="content">
+                        <div class="details">
+                            <p><strong>{{name}}</strong></p>
+                            <p><strong>R</strong> {{price}}.00</p>
+                            <p>{{description}}</p>
+                        </div>
+                    </div>
+                </div>
+              {{/each}}
+          </div>
+      {{/each}}
+    </script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="./client.js"></script>
+</body>
 </html>

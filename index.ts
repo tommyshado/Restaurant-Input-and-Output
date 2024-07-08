@@ -5,6 +5,7 @@ import path from "path";
 import fs from "fs";
 import { marked } from "marked";
 import cors from "cors";
+import { IRestaurant } from "./IRestaurant";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -14,7 +15,7 @@ app.use(express.static("public"));
 app.use(cors());
 
 app.get("/api", (req: Request, res: Response) => {
-    const restaurants = Restaurant.findRestaurants(restaurantsList);
+    const restaurants: IRestaurant[] = Restaurant.findRestaurants(restaurantsList);
     if (restaurants.length >= 1) {
         res.status(200).json(restaurants);
     } else {
@@ -25,7 +26,7 @@ app.get("/api", (req: Request, res: Response) => {
 app.get("/api/menu", (req: Request, res: Response) => {
     const { restaurant } = req.query;
     if (!restaurant) return res.status(400).send("Restaurant name is required.");
-    const foundRestaurant = Restaurant.findRestaurant(
+    const foundRestaurant: IRestaurant = Restaurant.findRestaurant(
         restaurantsList,
         restaurant as string
     );
