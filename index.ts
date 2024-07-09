@@ -15,7 +15,7 @@ app.use(express.static("public"));
 app.use(cors());
 
 app.get("/api", (req: Request, res: Response) => {
-    const restaurants: IRestaurant[] = Restaurant.findRestaurants(restaurantsList);
+    const restaurants: IRestaurant[] = restaurantsList;
     if (restaurants.length >= 1) {
         res.status(200).json(restaurants);
     } else {

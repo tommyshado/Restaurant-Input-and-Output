@@ -16,7 +16,7 @@ const Restaurant = new RestaurantImpl_1.default();
 app.use(express_1.default.static("public"));
 app.use((0, cors_1.default)());
 app.get("/api", (req, res) => {
-    const restaurants = Restaurant.findRestaurants(RestaurantList_1.default);
+    const restaurants = RestaurantList_1.default;
     if (restaurants.length >= 1) {
         res.status(200).json(restaurants);
     }
