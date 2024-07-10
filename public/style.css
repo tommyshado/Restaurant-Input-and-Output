@@ -1,74 +1,96 @@
-
-body, html {
+body,
+html {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-transform: capitalize;
+  background-color: #e8eddf;
 }
 
-.card {
-  border: 2px solid #6B7280; 
-  max-width: 300px; 
+.card-restaurants {
+  border: 2px solid;
+  width: 100%; /* Set a fixed width */
+  max-width: 300px;
+  height: auto; /* Set a fixed height */
   border-radius: 0.5rem;
-  background-color: #fff; 
+  background-color: #cfdbd5;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   border: 1px solid transparent;
-  margin: 10px; /* Added margin for spacing */
-  padding: 10px; /* Added padding for inner spacing */
+  margin: 5px; /* Margin for spacing */
+  padding: 5px; /* Padding for inner spacing */
+  overflow: hidden; /* Ensure content does not overflow */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-  
-  .card a {
-    text-decoration: none
-  }
-  
-  .content {
-    padding: 1.1rem;
-  }
-  
-  .image {
-    object-fit: cover;
-    width: 100%;
-    height: 150px;
-    background-color: rgb(239, 205, 255);
-  }
-  
-  .title {
-    color: #111827;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-    font-weight: 600;
-  }
-  
-  .details {
-    margin-top: 0.5rem;
-    color: #6B7280;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-  
-  .action {
-    display: inline-flex;
-    margin-top: 1rem;
-    color: #ffffff;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-weight: 500;
-    align-items: center;
-    gap: 0.25rem;
-    background-color: #2563EB;
-    padding: 4px 8px;
-    border-radius: 4px;
-  }
-  
-  .action span {
-    transition: .3s ease;
-  }
-  
-  .action:hover span {
-    transform: translateX(4px);
-  }
-  
-  .restaurants {
-    display: flex;
-  }
+
+.card-restaurants a {
+  text-decoration: none;
+}
+
+.card-menu {
+  border: 2px solid;
+  width: 50%; /* Set a fixed width */
+  max-width: 150px;
+  height: auto; /* Set a fixed height */
+  background-color: #cfdbd5;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid transparent;
+  border: 1px solid transparent;
+  margin: 5px; /* Margin for spacing */
+  padding: 5px; /* Padding for inner spacing */
+  overflow: hidden; /* Ensure content does not overflow */
+}
+
+.content {
+  padding: 1.1rem;
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 150px;
+  background-color: rgb(239, 205, 255);
+}
+
+.title {
+  color: #333533;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+
+.details {
+  margin-top: 0.5rem;
+  color: #333533;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.action {
+  display: inline-flex;
+  margin-top: 1rem;
+  color: #333533;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  align-items: center;
+  gap: 0.25rem;
+  background-color: #f5cb5c;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.action span {
+  transition: 0.3s ease;
+}
+
+.action:hover span {
+  transform: translateX(4px);
+}
+
+.restaurants {
+  display: flex;
+}
