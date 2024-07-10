@@ -1,47 +1,43 @@
-# Restaurant Inputs and Outputs
+# Restaurant Input and Output System
 
-## Overview
+## Introduction
 
-This project involves exploring various inputs and outputs using different restaurant menus stored in a YAML file. It demonstrates reading the restaurant menu data from a YAML file, converting it into a computer-readable format and displays on the screen using an API endpoint. It also demonstrates reading the name of a readme.md file and converting the content into HTML elements.
+This project aims to manage and display restaurant information effectively. It utilizes a YAML file to store restaurant data and converts README.md files into HTML for easy viewing. The system provides APIs to fetch restaurant details and convert menu descriptions into interactive formats.
 
 ## Getting Started
 
-1. Clone the repository using `git clone <project_URL>`.
-2. Navigate into the repository using `cd Restaurant-Inputs-and-Outputs`.
-3. Inside the directory install all the necessary dependencies using `npm install`.
+To set up and run this project locally, follow these steps:
 
-## API Documentation
+1. Clone the repository using `git clone <repository_url>`.
+2. Change into the project directory with `cd Restaurant-Input-and-Output`.
+3. Install the necessary dependencies by running `npm install`.
 
-The Application URL and Base URL for all the endpoints is:
+## API Endpoints
 
-``` api
-https://restaurant-inputs-and-outputs-r0fi.onrender.com/
-```
+### Fetch All Restaurants
 
-1. **Fetch all the restaurant menu from the** `restaurants.yaml file`
+- **Endpoint:** `/api`
+- **Method:** `GET`
+- **Description:** Retrieves a list of all restaurants defined in the `restaurants.yaml` file.
 
-    * **End point:** `/api`
-    * **Method:** `GET`
-    * **Description:** `Fetches all the restaurants`
+### Fetch Specific Restaurant Details
 
-2. **Fetch restaurant menu for specified a restaurant from the** `restaurant.yaml file`
+- **Endpoint:** `/api/menu?restaurant={restaurant_name}`
+- **Method:** `GET`
+- **Parameters:** Replace `{restaurant_name}` with the actual name of the restaurant.
+- **Description:** Returns detailed information about a specific restaurant, including its menu.
 
-    * **End point:** `/api/menu?restaurant={restaurant_name}`
-    * **Method:** `GET`
-    * **Params:** `Specify a parameter like this: restaurant={restaurant_name}`
-    * **Description:** `Fetches restaurant menu for a specified restaurant`
+### Convert README Files to HTML
 
-3. **Convert readme files in the `menu folder` into HTML elements**
-
-    * **End point:** `/menu?restaurant={restaurant_file_name}`
-    * **Method:** `GET`
-    * **Params:** `Specify a parameter like this: restaurant={restaurant_file_name}`
-    * **Description:** `Converts readme files in the menu folder into HTML elements`
+- **Endpoint:** `/menu?restaurant={restaurant_file_name}`
+- **Method:** `GET`
+- **Parameters:** Replace `{restaurant_file_name}` with the name of the README file without the extension.
+- **Description:** Converts the contents of a README.md file located in the `menu` directory into HTML format.
 
 ## Contributing
 
-If you're interested in contributing to this project, please feel free to contribute and fix any issues.
+Contributions to improve the functionality and usability of this project are welcome. Please feel free to submit pull requests or report issues.
 
 ## License
 
-This project is licensed under the MIT LICENSE. See the `LICENSE` file for details.
+This project is licensed under the MIT License. For more information, see the `LICENSE` file included in this repository.
