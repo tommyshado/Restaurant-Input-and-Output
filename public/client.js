@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const urlParams = new URLSearchParams(hash);
         const restaurantName = urlParams.get("restaurant");
         if (restaurantName) {
-            findRestaurantMenu(restaurantName);
+            findRestaurantMenu(restaurantName.toLowerCase());
         }
     }
     // Event listener for hash changes
