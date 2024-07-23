@@ -10,13 +10,7 @@ class RestaurantImpl {
             ;
         }
         ;
-        return {
-            name: "",
-            site: "",
-            email: "",
-            phone_number: 0,
-            menu_items: [],
-        };
+        return false;
     }
 }
 exports.default = RestaurantImpl;

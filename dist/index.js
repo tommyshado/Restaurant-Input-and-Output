@@ -29,7 +29,7 @@ app.get("/api/menu", (req, res) => {
     if (!restaurant)
         return res.status(400).send("Restaurant name is required.");
     const foundRestaurant = Restaurant.findRestaurant(RestaurantList_1.default, restaurant);
-    if (foundRestaurant.name) {
+    if (foundRestaurant) {
         res.status(200).json(foundRestaurant);
     }
     res.status(404).send("Restaurant not found.");

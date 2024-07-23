@@ -26,11 +26,11 @@ app.get("/api", (req: Request, res: Response) => {
 app.get("/api/menu", (req: Request, res: Response) => {
     const { restaurant } = req.query;
     if (!restaurant) return res.status(400).send("Restaurant name is required.");
-    const foundRestaurant: IRestaurant = Restaurant.findRestaurant(
+    const foundRestaurant: IRestaurant | boolean = Restaurant.findRestaurant(
         restaurantsList,
         restaurant as string
     );
-    if (foundRestaurant.name) {
+    if (foundRestaurant) {
         res.status(200).json(foundRestaurant);
     }
     res.status(404).send("Restaurant not found.");
